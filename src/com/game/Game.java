@@ -96,9 +96,13 @@ public class Game {
     }
 
     private void readScore() {
-        System.out.printf("%s's score is %s with a current winning streak of %s.\n" +
-                "%s's score is %s with a current winning streak of %s.\n\n",
-                p1.name, p1.gamesWon, p1.winningStreak, p2.name, p2.gamesWon, p2.winningStreak);
+        try {
+            System.out.printf("%s's score is %s with a current winning streak of %s.\n" +
+                            "%s's score is %s with a current winning streak of %s.\n\n",
+                    p1.name, p1.gamesWon, p1.winningStreak, p2.name, p2.gamesWon, p2.winningStreak);
+        } catch (NullPointerException npe) {
+            System.out.println("No players have been set.");
+        }
     }
 
     private void newGame() {

@@ -8,6 +8,10 @@ public class HumanPlayer extends Player{
         Scanner input = new Scanner(System.in);
         System.out.println(prompt);
         move = input.nextLine();
+        if (move.length()==0){
+            move = "invalid";
+            System.out.println("No move entered.");
+        }
         return move;
     }
 }

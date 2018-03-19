@@ -12,6 +12,9 @@ public abstract class Player {
              Scanner input = new Scanner(System.in);
              System.out.println("Enter name for player");
              name = input.nextLine();
+             if (name.length() == 0) {
+                 name = "Human";
+             }
          }
          public void setWinner(boolean result){
              winner = result;
